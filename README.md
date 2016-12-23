@@ -12,5 +12,5 @@
 -----
 ### Java
 
-* [Collections](https://github.com/chizcake/til/tree/master/java/collections)
-* [PMD](https://github.com/chizcake/til/tree/master/java/pmd)
+* [Collections](java/collections)
+* [PMD](java/pmd)
