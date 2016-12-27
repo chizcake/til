@@ -9,6 +9,7 @@
 ### Categories
 
 * [Java](#java)
+* [Swift](#swift)
 
 -----
 
@@ -16,3 +17,9 @@
 
 * [Collections](java/collections)
 * [PMD](java/pmd)
+
+-----
+
+### Swift
+
+* [variables, constants, tuples](swift/variables_constants_tuples.md)
