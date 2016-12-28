@@ -22,4 +22,5 @@
 
 ### Swift
 
-* [variables, constants, tuples](swift/variables_constants_tuples.md)
+* [Variables, Constants, Tuples](swift/variables_constants_tuples.md)
+* [Array, Dictionary](swift/array_dictionary.md)
