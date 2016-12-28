@@ -8,11 +8,11 @@
     
 ```swift
 var a = 10
-a = 20          // 변수는 값 변경이 가능
-a = "Hello"     // error: Int 형으로 선언된 변수에 String 등 다른 타입의 리터럴을 저장할 수 없다.
+a = 20                    // 변수는 값 변경이 가능
+a = "Hello"               // error: Int 형으로 선언된 변수에 String 등 다른 타입의 리터럴을 저장할 수 없다.
 
-var b           // error: 특정 리터럴로 값을 초기화해주거나, 타입을 선언해야 한다.
-var c: String   // String 형 변수를 선언
+var b                     // error: 특정 리터럴로 값을 초기화해주거나, 타입을 선언해야 한다.
+var c: String             // String 형 변수를 선언
 c = "Hello, Swift!"
 
 print("a: \(a), \(c)")    // a: 20, Hello, Swift!
@@ -67,16 +67,16 @@ let errorCode = (230, "null pointer assignment")
 print(errorCode.0)
 print(errorCode.1)
 
-var normalCode: (Int, String)    // 초기화 없이 선언도 가능하다.
+var normalCode: (Int, String)   // 초기화 없이 선언도 가능하다.
 normalCode = (1, "Hello")
-print(normalCode.0)
-print(normalCode.1)
+print(normalCode.0)             // 1
+print(normalCode.1)             // "Hello"
 
 var warningCode: (code: Int, value: String)     // 선언 시 인덱스에 이름을 부여할 수도 있다.
-warningCode.code = 100              // warningCode.0 = 100 과 같다.
-warningCode.value = "Test Message"  // warningCode.1 = "Test Message" 와 같다.
-print(warningCode.code)         // 100
-print(warningCode.value)        // "Test Message"
+warningCode.code = 100                          // warningCode.0 = 100 과 같다.
+warningCode.value = "Test Message"              // warningCode.1 = "Test Message" 와 같다.
+print(warningCode.code)                         // 100
+print(warningCode.value)                        // "Test Message"
 ```
 
 > tuple 선언 시 인덱스에 이름을 부여하면 가독성이 더 좋아질 것 같다.
