@@ -25,3 +25,4 @@
 * [Variables, Constants, Tuples](swift/variables_constants_tuples.md)
 * [Array, Dictionary](swift/array_dictionary.md)
 * [For, While, Repeat-while, Switch](swift/condition_loop.md)
+* [Function](swift/function.md)
