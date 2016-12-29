@@ -65,6 +65,18 @@ array1[1...3] = [200, 300, 400]         // [10, 200, 300, 400, 90]
 array1[1...4] = [50, 70]                // [10, 50, 70]     <- 그 뒤에 있던 숫자는 다 지워진다는 것을 명심하자. 
 ```
 
+> map 함수를 통해서 배열에 **일관된 작업**을 수행할 때 좀 더 효율적인 코딩을 할 수 있다.
+
+```swift
+func getDouble(item: Int) -> Int {
+    return item * 2
+}
+
+// func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
+var array = [10, 20, 30, 40, 50]
+var doubledArray = array.map(getDouble)     // 원래의 array 배열에 속한 item 은 값이 변하지 않는다.
+```
+
 * 배열에 저장된 값을 순회하는 방법
 
 ```swift
