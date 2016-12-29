@@ -19,7 +19,7 @@ func myFunc2(name: String) -> (String) {
 
 ```swift
 myFunc(name: "JUNYEONG", value: "Computer Science")
-myFunc(name: "TAJO", value: "Econimics")
+myFunc(name: "TAJO", value: "Economics")
 
 myFunc2(name: "JUNEYONG")
 ```
@@ -71,4 +71,87 @@ func greeting(name: String) {
 
 greeting()                      // "Hello, Swift!"
 greeting(name: "JUNYEONG")      // "Hello, JUNYEONG!"
+```
+
+* 가변인자 함수
+    - 함수에 전달되는 매개변수의 수를 정확하게 알 수 없을 때 사용하는 문법이다.
+    
+```swift
+// 매개변수에 주어지는 Double 형 숫자의 평균을 구하는 메소드 
+func arithmeticMean(numbers: Double...) -> Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    
+    return total / Double(numbers.count)
+}
+
+arithmeticMean(numbers: 3.14, 30.7, 58.1, 14.2)
+arithmeticMean(numbers: 3.12, 3, 4.8)
+```
+
+* 함수 참조변수
+
+```swift
+func addTwoInts(num1: Int, num2: Int) -> Int {
+    return num1 + num2
+}
+
+var funcVariable: (Int, Int) -> Int
+
+addTwoInts(num1: 5, num2: 3)    // 레이블을 반드시 기입하여야 한다.
+funcVariable = addTwoInts
+funcVariable(7, 3)              // 함수 참조변수는 레이블을 사용하지 않는다.
+
+```
+> 함수 참조변수는 매개변수에도 사용할 수 있다.
+
+```swift
+func resultAddTwoInts(addTwoNumbers: (Int, Int) -> Int, num1: Int, num2: Int) {
+    print("Result: \(addTwoNumbers(num1, num2))")
+}
+
+resultAddTwoInts(addTwoNumbers: addTwoInts, num1: 10, num2: 20)     // 함수를 사용할 때에는 레이블 사용하는 것을 잊지 말자.
+```
+
+* 위의 내용을 종합해서 중첩 함수를 만드는 것도 가능하다.
+
+```swift
+func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    func stepForward(input: Int) -> Int {
+        return input + 1
+    }
+    
+    func stepBackward(input: Int) -> Int {
+        return input - 1
+    }
+    
+    return backward ? stepBackward : stepForward    // 띄어쓰기 주의할 것
+}
+
+chooseStepFunction(backward: true)(10)
+chooseStepFunction(backward: false)(10)
+```
+
+* Swift 함수에서는 **매개변수로 들어온 값을 상수로 인식**하기 때문에 매개변수의 값을 함수 내부에서 변경할 수가 없다.
+    - 함수 내부에서 매개변수의 값을 바꾸려면 inout 키워드를 사용해야 한다.
+    - inout 키워드를 사용한 함수를 호출할 때는 & 연산자를 사용해야 한다.
+    
+```swift
+func swapTwoIntegers(num1: inout Int, num2: inout Int) {
+    let temp = num1
+    // inout 키워드를 사용함으로써 함수 내부에서 매개변수의 값을 변경하는 것이 가능해졌다. 
+    num1 = num2
+    num2 = temp
+}
+
+swapTwoIntegers(num1: &value1, num2: &value2)
+
+// 앞서 선보인 적이 있는데, 위의 swap 함수는 inout 키워드를 쓰지 않고, 리턴형이 tuple 인 함수를 정의해서 구현할 수도 있다.
+func swapTwoIntegers2(num1: Int, num2: Int) -> (Int, Int) {
+    return (num2, num1)
+}
+
+(value1, value2) = swapTwoIntegers2(num1: value1, num2: value2)
 ```
