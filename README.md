@@ -27,3 +27,4 @@
 * [For, While, Repeat-while, Switch](swift/condition_loop.md)
 * [Function](swift/function.md)
 * [Generic](swift/generic.md)
+* [Closure](swift/closure.md)
