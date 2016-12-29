@@ -118,7 +118,7 @@ resultAddTwoInts(addTwoNumbers: addTwoInts, num1: 10, num2: 20)     // 함수를
 * 위의 내용을 종합해서 중첩 함수를 만드는 것도 가능하다.
 
 ```swift
-func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+func chooseStepFunction(backward: Bool) -> ((Int) -> Int) {
     func stepForward(input: Int) -> Int {
         return input + 1
     }
@@ -132,6 +132,40 @@ func chooseStepFunction(backward: Bool) -> (Int) -> Int {
 
 chooseStepFunction(backward: true)(10)
 chooseStepFunction(backward: false)(10)
+
+// 중첩함수의 좀 더 쉬운 예제를 살펴보자.
+func outerFunction() -> ((Int) -> Int) {
+    func addOne(number: Int) -> Int {
+        return number + 1
+    }
+    
+    return addOne                   // nested function (함수 내부에 정의된 함수) 를 리턴하는 것도 가능하다.
+}
+
+var increment = outerFunction()
+print(increment(10))                // 11
+
+// 다음 코드를 통해 중첩함수의 특징을 알 수 있다.
+func makeIncrement(amount: Int) -> (() -> Int) {
+    var runningTotal = 10
+    func incrementor() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    
+    return incrementor
+}
+
+// 함수 참조변수인 incrementFive 와 incrementTen 이 nested function 인 incrementor 를 참조하고 있기 때문에 소멸되지 않고 메모리에 유지된다. 
+var incrementFive = makeIncrement(amount: 5)
+incrementFive()     // 15
+incrementFive()     // 20
+incrementFive()     // 25
+
+var incrementTen = makeIncrement(amount: 10)
+incrementTen()      // 20
+incrementTen()      // 30
+incrementTen()      // 40
 ```
 
 * Swift 함수에서는 **매개변수로 들어온 값을 상수로 인식**하기 때문에 매개변수의 값을 함수 내부에서 변경할 수가 없다.
