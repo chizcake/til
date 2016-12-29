@@ -24,6 +24,27 @@ myFunc(name: "TAJO", value: "Economics")
 myFunc2(name: "JUNEYONG")
 ```
 
+* 함수를 정의할 때 레이블에 **별칭 (alias)** 을 지어줄 수 있다.
+
+> 사실 이게 정확한 개념은 아닌 것 같지만, 이해한 바로는 alias 개념인 것 같아서 여기에 적어둔다.
+
+```swift
+func myFunc3(name personName: String, major: String) -> String {
+    // alias 로 "name" 을 적었지만, 함수를 정의할 때에는 alias 가 아닌 원래의 상수 이름으로 사용한다.
+    return "\(personName) : \(major)"
+}
+
+// alias 로 지정한 "name" 을 레이블처럼 사용할 수 있다.
+myFunc3(name: "JUNYEONG", major: "Computer Science")
+
+func myFunc4(_ name: String, major: String) -> String {
+    return "\(name) : \(major)"                         
+}
+
+// alias 로 익명 (_) 을 주었기 때문에, 함수를 호출할 때 name 에는 레이블을 적지 않는다. 
+myFunc4("TAJO", major: "Economics")
+```
+
 * Swift 의 함수에서 리턴형은 tuple 이기 때문에 여러 개의 값을 tuple 로 묶어서 반환하는 것이 가능하다.
 
 ```swift
