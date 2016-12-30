@@ -29,3 +29,4 @@
 * [Generic](swift/generic.md)
 * [Closure](swift/closure.md)
 * [Enumeration, Structure, Class](swift/enum_struct_class.md)
+* [Optional](swift/optional.md)
