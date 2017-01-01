@@ -33,3 +33,4 @@
 * [Reference (Strong reference, Weak reference)](swift/reference.md)
 * [Protocol](swift/protocol.md)
 * [Guard](swift/guard.md)
+* [Handling Errors](swift/handling_error.md)
