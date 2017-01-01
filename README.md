@@ -32,3 +32,4 @@
 * [Optional](swift/optional.md)
 * [Reference (Strong reference, Weak reference)](swift/reference.md)
 * [Protocol](swift/protocol.md)
+* [Guard](swift/guard.md)
