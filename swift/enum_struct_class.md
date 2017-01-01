@@ -188,6 +188,84 @@ videoMode.interlaced = true
 videoMode.description()
 ```
 
+* 클래스에서는 property 에 초기값을 할당하지 않으면 오류가 발생한다.
+    - property 에 직접 초기값을 할당하거나, init() 함수를 정의해서 property 에 초기값을 할당해야 한다.
+
+```swift
+// speed property 에 초기값이 할당되지 않았기 때문에 오류를 일으킨다. 
+class Car {
+    var speed
+}
+
+// property 에 직접 값을 할당할 수 있다.
+class Car {
+    var speed: Int = 0
+    var color: String = "Black"
+}
+
+// init() 함수를 사용해서 property 에 값을 할당할 수 있다.
+// 이 때, init() 함수에서는 반드시 선언된 모든 property 에 값을 할당해야 한다.
+class Car {
+    var speed: Int
+    var color: String
+    
+    init() {
+        speed = 0
+        color = "Black"
+    }
+    
+    init(color: String) {
+        speed = 0
+        self.color = color
+    }
+
+    deinit() {
+        print("Deinitialize Car instance")
+    }
+}
+
+var aCar = Car()
+var bCar = Car(color: "Blue")
+var cCar: Car? = Car()
+
+cCar = nil      // "Deinitialize Car instance"
+```
+
+> 위의 코드에서 보여준 deinit() 함수는 인스턴스가 해제되는 시점에 자동으로 호출이 된다. 
+
+## 상속
+* 부모 클래스의 property 와 함수를 자식 클래스가 물려받는 개념이다.
+    - 오버라이딩 함수를 정의할 때에는 함수 앞에 override 키워드를 적어야 한다.
+    - 상속 기능은 반복적인 코딩을 줄여주므로 코딩의 효율성이 높아진다.
+    - 코드의 재사용성을 늘려주는 객체지향 프로그래밍에서 매우 중요한 개념이다.
+    - 오버라이딩 기능을 통해서 부모 클래스의 함수 기능을 좀 더 보완할 수 있다.
+    
+```swift
+class NewCar: Car {
+    
+    var hasTurbo: Bool
+    
+    override init() {
+        hasTurbo = true     // 자식클래스에서 정의한 property 를 먼저 초기화
+        super.init()
+    }
+    
+    func describe() {
+        print("Speed: \(speed)")
+        print("Color: \(color)")
+        print("Turbo: \(hasTurbo)")
+    }
+}
+
+var newCar = NewCar()
+newCar.describe()
+```
+
+## final 클래스
+
+* 클래스 선언 시에 final 키워드가 붙으면 상속이 불가능한 클래스가 된다.
+    - 보안상 상속을 하면 안되는 클래스인 경우에 final 키워드를 사용해서 상속을 차단한다. 
+
 ## 구조체와 클래스의 차이점
 
 * 구조체는 값 타입이고, 클래스는 참조 타입이다. 아래의 코드를 통해 값 타입과 참조 타입이 무슨 의미인지 좀 더 자세히 설명하겠다.
