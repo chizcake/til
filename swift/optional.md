@@ -28,3 +28,40 @@ num2 = Int("Hello")         // nil
     - 연산 작업을 하기 위해선 wrapped optional 을 **unwrapped** 해야 한다. 이 때 '!' 연산자를 사용한다.
     - `optional(100)! == 100`
     
+* Optional 변수는 사용하기 전에 반드시 nil 검사를 해서 안정성을 확보해야 한다.
+
+```swift
+struct Person {
+    var name: String?
+    var age: Int
+}
+
+var person: Person? = Person(name: "홍길동", age: 27)
+person = nil
+
+/* person 이 nil 로 할당되었기 때문에 아래의 코드는 오류를 일으킨다. */
+//print("name: \(person!.name!), age: \(person!.age)")
+
+/* 다음과 같이 Optional 변수가 nil 인지 확인을 한 후에 사용해야 한다. */
+if person != nil {
+    if person!.name != nil {
+        print("name: \(person!.name!), age: \(person!.age)")
+    }
+}
+```
+
+## Optional Chain
+
+* 위의 코드에서 Optional 변수가 nil 인지 확인을 하기 위해서 if 문을 여러번 중첩하고 있다. 만약 nil 확인을 여러번 해야하는 상황이 되면 코드의 가독성이 떨어지고 코딩 과정에서 오류가 발생할 소지가 있다. 그래서 중첩 if 문의 대안으로 사용할 수 있는 것이 **Optional Chain** 이다.
+
+```swift
+// if 문을 여러 번 중첩해서 확인해야 할 name 값을 if 문 하나로 해결한다. 
+if let personName = person?.name {
+    print("name: \(personName)")
+}
+
+person?.name = "임꺽정"
+if let personName = person?.name {
+    print("name: \(personName)")
+}
+```
