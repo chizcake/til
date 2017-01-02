@@ -264,7 +264,85 @@ newCar.describe()
 ## final 클래스
 
 * 클래스 선언 시에 final 키워드가 붙으면 상속이 불가능한 클래스가 된다.
-    - 보안상 상속을 하면 안되는 클래스인 경우에 final 키워드를 사용해서 상속을 차단한다. 
+    - 보안상 상속을 하면 안되는 클래스인 경우에 final 키워드를 사용해서 상속을 차단한다.
+    
+## Computed Properties
+
+* Computed Properties 는 어떤 값을 저장하기 위해 선언하는 프로퍼티가 아니다. 대신 다른 프로퍼티의 값을 가져오고 (getter), 설정하기 (optional setter) 위한 용도로 사용된다.
+    - Computed Properties 는 클래스, 구조체, 열거형에서 모두 사용할 수 있다.
+
+```swift
+struct Point {
+    
+    var x = 0.0, y = 0.0
+}
+
+struct Size {
+    
+    var width = 0.0, height = 0.0
+}
+
+struct Rect {
+    
+    var origin = Point()
+    var size = Size()
+    // computed property
+    var center: Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        
+        set(newCenter) {
+            origin.x = newCenter.x - (size.width / 2)
+            origin.y = newCenter.y - (size.height / 2)
+        }
+        
+        /* set 을 다음과 같이 사용하는 것도 가능하다 (default: newValue)
+        set {
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
+        }
+        */
+    }
+}
+
+var square = Rect(origin: Point(x: 0.0, y: 0.0), size: Size(width: 10.0, height: 10.0))
+let initlaiSquareCenter = square.center
+
+square.center = Point(x: 15.0, y: 15.0)
+print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
+```
+
+## Property Observers
+
+* Property Observers 는 프로퍼티 값이 변하는 것을 관찰한다. Property Observers 는 프로퍼티 값이 할당될 때마다 호출된다. (새롭게 할당된 프로퍼티 값이 기존에 저장된 값과 동일하더라도 호출이 된다.)
+* Property Observers 는 lazy stored properties 를 제외한 모든 stored properties 에 적용할 수 있다. 또한 상속 받은 stored properties 에 적용하는 것도 가능하다. 
+
+```swift
+class StepCounter {
+
+    var totalSteps: Int = 0 {
+        // willSet 은 값이 할당되기 직전에 호출이 된다.
+        willSet(newTotalSteps) {
+            print("About to set totalSteps to \(newTotalSteps)")
+        }
+        
+        // didSet 은 값이 할당된 직후에 호출이 된다.
+        didSet {
+            if totalSteps > oldValue {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+stepCounter.totalSteps = 100
+stepCounter.totalSteps = 550
+```
 
 ## 구조체와 클래스의 차이점
 
