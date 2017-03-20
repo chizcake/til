@@ -1,6 +1,6 @@
 # Lecture 01 - Overview of iOS, Swift
 
-> Developing Apps for iOS CS193P by Stanford University
+> [Developing Apps for iOS CS193P by Stanford University](https://www.youtube.com/watch?v=_lRx1zoriPo&list=PLsJq-VuSo2k26duIWzNjXztkZ7VrbppkT)
 
 ### MVC Patterns
 * Model: Model group is what our program does, it's UI independent.
