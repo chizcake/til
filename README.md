@@ -42,3 +42,5 @@
 ### Stanford iOS
 
 * [Lecture 01](iOS/lecture_01.md)
+* Projects
+    - [Calculator](iOS/projects/Calculator)
