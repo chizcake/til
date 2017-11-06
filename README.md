@@ -52,3 +52,4 @@
 ### Raywenderlich
 
 * [Beginning Collection Views](Raywenderlich/Beginning-Collection-Views)
+	- [Tips for Collection Views](Raywenderlich/Beginning-Collection-Views/Tips-For-Collection-Views.md)
