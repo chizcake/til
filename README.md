@@ -51,4 +51,4 @@
 
 ### Raywenderlich
 
-* [What I've read so far](Raywenderlich/list.md)
+* [Beginning Collection Views](Raywenderlich/Beginning-Collection-Views)
