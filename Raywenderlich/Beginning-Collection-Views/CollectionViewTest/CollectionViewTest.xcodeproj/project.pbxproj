@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA6D61541FB1E4B700A95996 /* Photo Attribution.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA6D61501FB1E4B700A95996 /* Photo Attribution.txt */; };
+		BA6D61551FB1E4B700A95996 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D61511FB1E4B700A95996 /* DataSource.swift */; };
+		BA6D61561FB1E4B700A95996 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D61521FB1E4B700A95996 /* Park.swift */; };
+		BA6D61571FB1E4B700A95996 /* NationalParks.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6D61531FB1E4B700A95996 /* NationalParks.plist */; };
+		BA6D61591FB1EE5D00A95996 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D61581FB1EE5D00A95996 /* GradientView.swift */; };
+		BA6D615C1FB2AAF500A95996 /* DataHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D615B1FB2AAF500A95996 /* DataHeaderCell.swift */; };
 		BABA7EB61FAD6FE100105BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABA7EB51FAD6FE100105BD1 /* AppDelegate.swift */; };
 		BABA7EBD1FAD6FE100105BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABA7EBC1FAD6FE100105BD1 /* Assets.xcassets */; };
 		BABA7ED81FAD95DA00105BD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABA7ED71FAD95DA00105BD1 /* MainViewController.swift */; };
 		BABA7EDA1FAD980E00105BD1 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABA7ED91FAD980E00105BD1 /* DataCell.swift */; };
 		BABA7EDC1FAD9EE500105BD1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABA7EDB1FAD9EE500105BD1 /* DetailViewController.swift */; };
+		BADD93121FB44C3300A0154C /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD93111FB44C3300A0154C /* FlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA6D61501FB1E4B700A95996 /* Photo Attribution.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Photo Attribution.txt"; sourceTree = "<group>"; };
+		BA6D61511FB1E4B700A95996 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		BA6D61521FB1E4B700A95996 /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		BA6D61531FB1E4B700A95996 /* NationalParks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NationalParks.plist; sourceTree = "<group>"; };
+		BA6D61581FB1EE5D00A95996 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		BA6D615B1FB2AAF500A95996 /* DataHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHeaderCell.swift; sourceTree = "<group>"; };
 		BABA7EB21FAD6FE100105BD1 /* CollectionViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABA7EB51FAD6FE100105BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BABA7EBC1FAD6FE100105BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +46,7 @@
 		BABA7ED71FAD95DA00105BD1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BABA7ED91FAD980E00105BD1 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		BABA7EDB1FAD9EE500105BD1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BADD93111FB44C3300A0154C /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA6D614F1FB1E48600A95996 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA6D61511FB1E4B700A95996 /* DataSource.swift */,
+				BA6D61531FB1E4B700A95996 /* NationalParks.plist */,
+				BA6D61521FB1E4B700A95996 /* Park.swift */,
+				BA6D61501FB1E4B700A95996 /* Photo Attribution.txt */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BA6D615A1FB2AAC200A95996 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA6D61581FB1EE5D00A95996 /* GradientView.swift */,
+				BABA7ED91FAD980E00105BD1 /* DataCell.swift */,
+				BA6D615B1FB2AAF500A95996 /* DataHeaderCell.swift */,
+				BADD93111FB44C3300A0154C /* FlowLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BABA7EA91FAD6FE100105BD1 = {
 			isa = PBXGroup;
 			children = (
@@ -73,10 +109,11 @@
 		BABA7EB41FAD6FE100105BD1 /* CollectionViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				BA6D615A1FB2AAC200A95996 /* View */,
+				BA6D614F1FB1E48600A95996 /* Data */,
 				BABA7EB51FAD6FE100105BD1 /* AppDelegate.swift */,
 				BABA7ED71FAD95DA00105BD1 /* MainViewController.swift */,
 				BABA7EDB1FAD9EE500105BD1 /* DetailViewController.swift */,
-				BABA7ED91FAD980E00105BD1 /* DataCell.swift */,
 				BABA7EBC1FAD6FE100105BD1 /* Assets.xcassets */,
 				BABA7EC11FAD6FE100105BD1 /* Info.plist */,
 			);
@@ -166,7 +203,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6D61541FB1E4B700A95996 /* Photo Attribution.txt in Resources */,
 				BABA7EBD1FAD6FE100105BD1 /* Assets.xcassets in Resources */,
+				BA6D61571FB1E4B700A95996 /* NationalParks.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,9 +224,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABA7EB61FAD6FE100105BD1 /* AppDelegate.swift in Sources */,
+				BA6D61561FB1E4B700A95996 /* Park.swift in Sources */,
 				BABA7EDA1FAD980E00105BD1 /* DataCell.swift in Sources */,
 				BABA7ED81FAD95DA00105BD1 /* MainViewController.swift in Sources */,
+				BADD93121FB44C3300A0154C /* FlowLayout.swift in Sources */,
+				BA6D61591FB1EE5D00A95996 /* GradientView.swift in Sources */,
+				BA6D61551FB1E4B700A95996 /* DataSource.swift in Sources */,
 				BABA7EDC1FAD9EE500105BD1 /* DetailViewController.swift in Sources */,
+				BA6D615C1FB2AAF500A95996 /* DataHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
