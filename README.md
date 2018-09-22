@@ -40,6 +40,7 @@
 * [Guard](swift/guard.md)
 * [Handling Errors](swift/handling_error.md)
 * [Set](swift/set.md)
+* [Type Checking](swift/type_checking.md)
 
 -----
 
